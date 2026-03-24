@@ -1,0 +1,35 @@
+package com.nika.ex3_lista_javaspringboot.models;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.math.BigDecimal;
+
+@Entity(name = "Pedido")
+@Table(name = "tb_pedido")
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "data_pedido")
+    private LocalDateTime data;
+
+    @Column(name = "valor_total")
+    private BigDecimal valorTotal;
+
+    private String status;
+
+    // getters e setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public LocalDateTime getData() { return data; }
+    public void setData(LocalDateTime data) { this.data = data; }
+
+    public BigDecimal getValorTotal() { return valorTotal; }
+    public void setValorTotal(BigDecimal valorTotal) { this.valorTotal = valorTotal; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+}
